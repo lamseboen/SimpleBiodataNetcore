@@ -18,7 +18,7 @@ namespace SimpleBiodataNetcore.Controllers
             _logger = logger;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(BiodataModel? dataNya)
         {
             ViewData["nama"] = "lamse";
             ViewData["jenisKelamin"] = "Laki-laki";
@@ -36,11 +36,22 @@ namespace SimpleBiodataNetcore.Controllers
             return View();
         }
 
-        
-        //public IHttpActionResult InsertData(BiodataModel biodata)
-        //{
 
-        //}
+        public ActionResult FormTambah(string nama, string jenisKelamin, string hobby)
+        {
+            ViewData["nama"] = nama;
+            
+            if(jenisKelamin == "1")
+            {
+                ViewData["jenisKelamin"] = "Laki-laki" ;
+            }
+            else
+            {
+                ViewData["jenisKelamin"] = "Perempuan";
+            }
+            ViewData["hobby"] = hobby;
+            return View("index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
