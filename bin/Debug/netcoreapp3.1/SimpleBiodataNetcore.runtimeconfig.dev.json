@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/lamse/.dotnet/store/|arch|/|tfm|",
+      "/Users/lamse/.nuget/packages"
+    ]
+  }
+}
